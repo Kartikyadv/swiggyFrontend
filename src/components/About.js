@@ -1,13 +1,8 @@
-import User from "./User";
-import background from "../../public/assets/images/bg.jpg";
 import { FaFacebook, FaLinkedin, FaInstagram } from 'react-icons/fa';
 
 const About = () => {
   return (
     <>
-      {/* <div className="absolute -z-10 opacity-50  md:size-fit">
-        <img src={background} alt="" />
-      </div> */}
       <div className="bg-gradient-to-tr from-gray-400 to-gray-600 min-h-screen p-8">
       <div className="max-w-2xl mx-auto">
         <h1 className="text-4xl font-bold text-white mb-4">About FoodHub</h1>
