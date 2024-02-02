@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import logo from "../../public/assets/images/logo.jpg";
+import FoodHub from "../../public/assets/images/FoodHub2.png";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
@@ -15,7 +15,7 @@ const Header = () => {
   return (
     <div className="flex flex-row justify-between items-center shadow-lg m-2 p-4">
       <div className="w-20 md:w-32 mb-4 md:mb-0">
-        <img className="logo" src={logo} alt="logo"></img>
+        <img className="logo" src={FoodHub} alt="logo"></img>
       </div>
       <div className="flex items-center">
         <button
