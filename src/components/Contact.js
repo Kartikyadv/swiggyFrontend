@@ -1,7 +1,7 @@
 import { FaFacebook, FaLinkedin, FaInstagram } from 'react-icons/fa';
 const Contact = () => {
     return (
-        <div className="bg-gradient-to-tr from-gray-400 to-gray-600 min-h-screen p-8">
+        <div className="bg-gradient-to-r from-teal-400 to-blue-500 min-h-screen p-8">
       <div className="max-w-2xl mx-auto">
         <h1 className="text-4xl font-bold text-white mb-4">Contact FoodHub</h1>
         <p className="text-white mb-6">

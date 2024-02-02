@@ -15,7 +15,7 @@ const Cart = () => {
         <div className="text-center m-6 p-2">
             <div className="flex">
             <h1 className="text-2xl font-bold m-auto">Cart</h1>
-            <button onClick={handleClearCart} className="m-2 p-2 bg-black rounded-lg text-white">Clear</button>
+            <button onClick={handleClearCart} className="m-2 p-2 bg-gradient-to-r from-teal-400 to-blue-500 hover:from-teal-500 hover:to-blue-600 rounded-lg text-white">Clear</button>
             </div>
             {cartItems.length === 0 && <Link to="/"><h1 className="font-serif mt-4 p-5 text-2xl">Add Items to the Cart</h1></Link>}
             <div className="w-2/4 m-auto">

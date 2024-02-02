@@ -14,7 +14,7 @@ const Header = () => {
 
   return (
     <div className="flex flex-row justify-between items-center shadow-lg m-2 p-4">
-      <div className="w-20 md:w-32 mb-4 md:mb-0">
+      <div className="w-28 md:w-32 mb-4 md:mb-0">
         <img className="logo" src={FoodHub} alt="logo"></img>
       </div>
       <div className="flex items-center">
@@ -41,7 +41,7 @@ const Header = () => {
             }
             >
           <button
-            className="text-xl bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded"
+            className=" bg-gradient-to-r from-teal-400 to-blue-500 hover:from-teal-500 hover:to-blue-600 text-white font-bold py-3 px-4 rounded-full focus:outline-none focus:shadow-outline transition duration-300"
             onClick={() => {
               loginStatus === "Login"
                 ? setLoginStatus("Logout")
