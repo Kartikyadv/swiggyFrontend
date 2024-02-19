@@ -10,7 +10,7 @@ import Error from "./components/Error";
 import RestaurantDetail from "./components/RestaurantDetail";
 import UserContext from "./utils/UserContext";
 import appStore from "./utils/appStore";
-import { Provider } from 'react-redux'
+import { Provider } from 'react-redux';
 
 const Contact = lazy(()=> import("./components/Contact"));
 

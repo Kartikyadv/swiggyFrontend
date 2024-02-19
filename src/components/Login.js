@@ -1,9 +1,23 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { signInWithPopup } from "firebase/auth";
+import {auth, provider} from "./firebase.js";
+import { useDispatch } from "react-redux";
+import { addUserName } from '../utils/cartSlice.js';
+
 
 const Login = () => {
+  const dispatch = useDispatch();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-  
+    
+    const handleGoogleLogin = () => {
+      signInWithPopup(auth, provider)
+      .then((result) => {
+        const user = result.user;
+        dispatch(addUserName(user.displayName));
+        });
+    }
+
     const handleLogin = () => {
       // Add your login logic here
       console.log('Logging in with:', email, password);
@@ -81,6 +95,7 @@ const Login = () => {
               </button>
             </div>
           </form>
+          <button className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-gradient-to-r from-teal-400 to-blue-500 hover:from-teal-500 hover:to-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" onClick={handleGoogleLogin}>continue with google</button>
         </div>
       </div>
     );
