@@ -10,6 +10,9 @@ const cartSlice = createSlice({
     addUserName: (state,action) => {
       state.userName = action.payload;
     },
+    removeUserName: (state) => {
+      state.userName = null;
+    },
     addItem: (state,action) => {
       state.items.push(action.payload);
     },
@@ -22,5 +25,5 @@ const cartSlice = createSlice({
   },
 })
 
-export const { addItem, removeItem, clearCart,addUserName } = cartSlice.actions
+export const { addItem, removeItem, clearCart,addUserName,removeUserName } = cartSlice.actions
 export default cartSlice.reducer

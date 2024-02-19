@@ -3,14 +3,24 @@ import FoodHub from "../../public/assets/images/FoodHub2.png";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { removeUserName } from "../utils/cartSlice";
 
 const Header = () => {
+  const dispatch = useDispatch();
   const [loginStatus, setLoginStatus] = useState("Login");
   const [isSidebarOpen, setSidebarOpen] = useState(false);
   const onlineStatus = useOnlineStatus();
+  const navigate = useNavigate();
   const data = useContext(UserContext);
   const cart = useSelector((store) => store.cart.items);
+  const userName = useSelector((store) => store.cart.userName);
+  // if(userName){
+  //   setLoginStatus("Login")
+  // } else {
+  //   setLoginStatus("Logout")
+  // }
 
   return (
     <div className="flex flex-row justify-between items-center shadow-lg m-2 p-4">
@@ -44,14 +54,15 @@ const Header = () => {
             className=" bg-gradient-to-r from-teal-400 to-blue-500 hover:from-teal-500 hover:to-blue-600 text-white font-bold py-3 px-4 rounded-full focus:outline-none focus:shadow-outline transition duration-300"
             onClick={() => {
               loginStatus === "Login"
-                ? setLoginStatus("Logout")
+                ? setLoginStatus("Logout") && 
+                navigate("/") && dispatch(removeUserName())
                 : setLoginStatus("Login");
             }}
           >
             {loginStatus}
           </button>
           </Link>
-          <li className="text-xl">Hi, {data.loggedInUser}</li>
+          <li className="text-xl">👋 {userName.split(" ")[0]}</li>
         </ul>
       </div>
     </div>
