@@ -11,10 +11,9 @@ const RestaurantDetail = () => {
   const resInfo = useRestaurantDetails(id);
 
   if (resInfo === null) return <Shimmer />;
-
-  const { name, cuisines } = resInfo?.cards[2]?.card?.card?.info;
+  const { name, cuisines } = resInfo?.cards[0]?.card?.card?.info;
   const categories =
-    resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+    resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
       (c) =>
         c.card?.card?.["@type"] ===
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
