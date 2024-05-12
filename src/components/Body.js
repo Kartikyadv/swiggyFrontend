@@ -17,9 +17,10 @@ const Body = () => {
 
   const fetchData = async () => {
     const apiData = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.4894154&lng=77.01186960000001&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      "https://proxy.cors.sh/https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.4894154&lng=77.01186960000001&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const jsonData = await apiData.json();
+    console.log(jsonData);
     setresList(
       jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
