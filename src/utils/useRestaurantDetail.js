@@ -8,7 +8,7 @@ const useRestaurantDetails = (id) => {
     },[]);
 
     const fetchData = async () => {
-        const dataTemp = await fetch(`https://proxy.cors.sh/https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=27.1774553&lng=78.0077653&restaurantId=${id}&catalog_qa=undefined&submitAction=ENTER`);
+        const dataTemp = await fetch(`https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=27.1774553&lng=78.0077653&restaurantId=${id}&catalog_qa=undefined&submitAction=ENTER`);
         const jsonData = await dataTemp.json();
         console.log(jsonData);
         setResInfo(jsonData.data);
